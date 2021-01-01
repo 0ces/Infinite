@@ -1,6 +1,10 @@
+* {
+    margin: 0;
+}
+
 :root {
     --diff: 2px;
-    --margin-start: 55px;
+    --margin-start: 88px;
 }
 
 @keyframes mymove {
@@ -112,5 +116,15 @@ body{
 
 .second {
     position: absolute;
+    animation: in-delay 8s;
+}
+
+span {
+    position: absolute;
+    top: 95vh;
+    width: 100%;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    color: rgba(255,255,255,0.2);
     animation: in-delay 8s;
 }
