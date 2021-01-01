@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css2?family=Staatliches);
+@import url(https://fonts.googleapis.com/css2?family=Staatliches);
 
 * {
     margin: 0;
@@ -6,7 +6,7 @@
 
 :root {
     --diff: 2px;
-    --margin-start: 88px;
+    --margin-start: 55px;
 }
 
 @keyframes mymove {
