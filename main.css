@@ -1,3 +1,65 @@
+:root {
+    --diff: 2px;
+    --margin-start: 55px;
+}
+
+@keyframes mymove {
+    from {border: calc(10px + var(--diff)) solid red;}
+    50% {border: calc(10px + var(--diff)) solid blue;}
+    to {border: calc(10px + var(--diff)) solid red;}
+}
+
+@keyframes background-changer {
+    from {background: red;}
+    50% {background: blue;}
+    to {background: red;}
+}
+
+@keyframes in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes in-delay {
+    from {opacity: 0;}
+    50% {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes rotation-left {
+    from {
+        /* transform: rotate(-135deg); */
+        margin-left: var(--margin-start);
+        background: transparent;
+    }
+    25% {
+        margin-left: var(--margin-start);
+        background: transparent;
+    }
+    to {
+        /* transform: rotate(45deg); */
+        margin-left: 0px;
+        background: #000;
+    }
+}
+
+@keyframes rotation-right {
+    from {
+        /* transform: rotate(45deg); */
+        margin-right: var(--margin-start);
+        background: transparent;
+    }
+    25% {
+        margin-right: var(--margin-start);
+        background: transparent;
+    }
+    to {
+        /* transform: rotate(-135deg); */
+        margin-right: 0px;
+        background: #000;
+    }
+}
+
 body{
     background: #000;
     height: 90vh;
@@ -5,17 +67,21 @@ body{
 }
 .infinity {
   position: absolute;
-  top: calc(50vh - 80px);
+  top: calc(50vh - 40px);
   left: calc(50vw - 89px);
   width: 178px;
   height: 80px;
+
 }
 .infinity:not(.second) {
-    margin-top: 2px;
+    /* height: calc(80px + var(--diff)); */
+    margin-top: calc((var(--diff) + .5px) / 1.41);
+    animation: in 2s;
 }
 .infinity:before,
 .infinity:after {
   content: "";
+  /* animation: background-changer 5s infinite; */
   background: #000;
   position: absolute;
   top: 0;
@@ -27,22 +93,24 @@ body{
   border-image-slice: 1; */
   border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
   transform: rotate(45deg);
+  animation: rotation-left 5s;
+}
+.infinite::before {
+
 }
 .infinity:after {
   left: auto;
   right: 0;
   transform: rotate(-135deg);
+  animation: rotation-right 5s;
 }
 .second:before,
 .second:after {
     animation: mymove 5s infinite;
-    opacity: 0.8;
+    background: #000;
 }
-@keyframes mymove {
-  from {border: 12px solid red;}
-  50% {border: 12px solid blue;}
-  to {border: 12px solid red;}
-}
+
 .second {
     position: absolute;
+    animation: in-delay 8s;
 }
