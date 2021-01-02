@@ -7,7 +7,8 @@
 :root {
     --diff: 0px;
     --margin-start: 55px;
-    --spread: 5px;
+    --spread: 10px;
+    --shadow: 1px;
 }
 
 @keyframes background-changer {
@@ -63,22 +64,22 @@
 
 @keyframes shadow-animation {
     from {
-        box-shadow: -3px -3px var(--spread) red,
-                     3px  3px var(--spread) red,
-              inset -3px -3px var(--spread) red,
-              inset  3px  3px var(--spread) red;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
+                         var(--shadow)          var(--shadow)     var(--spread) red,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
+              inset      var(--shadow)          var(--shadow)     var(--spread) red;
     }
     50% {
-        box-shadow: -3px -3px var(--spread) blue,
-                     3px  3px var(--spread) blue,
-              inset -3px -3px var(--spread) blue,
-              inset  3px  3px var(--spread) blue;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) blue,
+                         var(--shadow)          var(--shadow)     var(--spread) blue,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) blue,
+              inset      var(--shadow)          var(--shadow)     var(--spread) blue;
     }
     to {
-        box-shadow: -3px -3px var(--spread) red,
-                     3px  3px var(--spread) red,
-              inset -3px -3px var(--spread) red,
-              inset  3px  3px var(--spread) red;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
+                         var(--shadow)          var(--shadow)     var(--spread) red,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
+              inset      var(--shadow)          var(--shadow)     var(--spread) red;
     }
 }
 
