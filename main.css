@@ -2,12 +2,13 @@
 
 * {
     margin: 0;
+    user-select: none;
 }
 
 :root {
     --diff: 0px;
     --margin-start: 55px;
-    --spread: 10px;
+    --spread: 6px;
     --shadow: 1px;
 }
 
@@ -36,7 +37,7 @@
     }
     25% {
         margin-left: var(--margin-start);
-        background: transparent;
+        border-color: #000;
     }
     to {
         /* transform: rotate(45deg); */
@@ -53,7 +54,7 @@
     }
     25% {
         margin-right: var(--margin-start);
-        background: transparent;
+        border-color: #000;
     }
     to {
         /* transform: rotate(-135deg); */
@@ -64,22 +65,22 @@
 
 @keyframes shadow-animation {
     from {
-        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
-                         var(--shadow)          var(--shadow)     var(--spread) red,
-              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
-              inset      var(--shadow)          var(--shadow)     var(--spread) red;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) black,
+                         var(--shadow)          var(--shadow)     var(--spread) black,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) black,
+              inset      var(--shadow)          var(--shadow)     var(--spread) black;
     }
     50% {
-        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) blue,
-                         var(--shadow)          var(--shadow)     var(--spread) blue,
-              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) blue,
-              inset      var(--shadow)          var(--shadow)     var(--spread) blue;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) goldenrod,
+                         var(--shadow)          var(--shadow)     var(--spread) goldenrod,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) goldenrod,
+              inset      var(--shadow)          var(--shadow)     var(--spread) goldenrod;
     }
     to {
-        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
-                         var(--shadow)          var(--shadow)     var(--spread) red,
-              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) red,
-              inset      var(--shadow)          var(--shadow)     var(--spread) red;
+        box-shadow: calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) black,
+                         var(--shadow)          var(--shadow)     var(--spread) black,
+              inset calc(var(--shadow)*-1) calc(var(--shadow)*-1) var(--spread) black,
+              inset      var(--shadow)          var(--shadow)     var(--spread) black;
     }
 }
 
@@ -142,13 +143,13 @@ body{
 }
 .second:before,
 .second:after {
-    animation: mymove 5s infinite, shadow-animation 5s infinite;
+    animation: shadow-animation 5s infinite;
     /* background: #000; */
 }
 
 .second {
     position: absolute;
-    animation: in-delay 8s;
+    animation: in-delay 5s;
 }
 
 span {
@@ -156,7 +157,7 @@ span {
     width: 100%;
     font-family: 'Staatliches', cursive;
     text-align: center;
-    animation: in-delay 8s;
+    animation: in-delay 5s;
 }
 
 .date {
@@ -165,11 +166,11 @@ span {
 }
 
 .date:not(.date2) {
-    animation: in-delay 8s, date-animation 6s infinite 8s;
+    animation: in-delay 5s, date-animation 6s infinite 5s;
 }
 
 .date2 {
-    animation: in-delay 11s, date-animation 6s infinite 11s;
+    animation: in-delay 8s, date-animation 6s infinite 8s;
     opacity: 0;
     transition: all 1s;
 }
