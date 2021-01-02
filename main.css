@@ -83,6 +83,18 @@
     }
 }
 
+@keyframes date-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 body{
     background: #000;
     height: 90vh;
@@ -154,6 +166,16 @@ span {
 .date {
     top: 58vh;
     color: rgba(255,255,255,0.2);
+}
+
+.date:not(.date2) {
+    animation: in-delay 8s, date-animation 6s infinite 8s;
+}
+
+.date2 {
+    animation: in-delay 11s, date-animation 6s infinite 11s;
+    opacity: 0;
+    transition: all 1s;
 }
 
 .ask {
