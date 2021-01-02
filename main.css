@@ -5,14 +5,9 @@
 }
 
 :root {
-    --diff: 2px;
+    --diff: 0px;
     --margin-start: 55px;
-}
-
-@keyframes mymove {
-    from {border: calc(10px + var(--diff)) solid red;}
-    50% {border: calc(10px + var(--diff)) solid blue;}
-    to {border: calc(10px + var(--diff)) solid red;}
+    --spread: 5px;
 }
 
 @keyframes background-changer {
@@ -66,6 +61,27 @@
     }
 }
 
+@keyframes shadow-animation {
+    from {
+        box-shadow: -3px -3px var(--spread) red,
+                     3px  3px var(--spread) red,
+              inset -3px -3px var(--spread) red,
+              inset  3px  3px var(--spread) red;
+    }
+    50% {
+        box-shadow: -3px -3px var(--spread) blue,
+                     3px  3px var(--spread) blue,
+              inset -3px -3px var(--spread) blue,
+              inset  3px  3px var(--spread) blue;
+    }
+    to {
+        box-shadow: -3px -3px var(--spread) red,
+                     3px  3px var(--spread) red,
+              inset -3px -3px var(--spread) red,
+              inset  3px  3px var(--spread) red;
+    }
+}
+
 body{
     background: #000;
     height: 90vh;
@@ -88,7 +104,7 @@ body{
 .infinity:after {
     content: "";
     /* animation: background-changer 5s infinite; */
-    background: #000;
+    /* background: #000; */
     position: absolute;
     top: 0;
     left: 0;
@@ -100,6 +116,7 @@ body{
     border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
     transform: rotate(45deg);
     animation: left-animation 5s cubic-bezier(.19,1,.22,1);
+
 }
 .infinite::before {
 
@@ -112,7 +129,7 @@ body{
 }
 .second:before,
 .second:after {
-    animation: mymove 5s infinite;
+    animation: mymove 5s infinite, shadow-animation 5s infinite;
     background: #000;
 }
 
