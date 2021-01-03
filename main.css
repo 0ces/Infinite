@@ -3,6 +3,8 @@
 * {
     margin: 0;
     user-select: none;
+    box-sizing: border-box;
+    transition: all 1s;
 }
 
 :root {
@@ -179,4 +181,27 @@ span {
     top: 39vh;
     font-size: 22px;
     color: rgba(0,0,0,0.8);
+}
+
+.conn2 {
+    position: absolute;
+    width: 10px;
+    height: 14px;
+    top: calc(50vh - 7px);
+    left: calc(50vw - 5px);
+    transform: rotate(-43deg);
+    animation: in-delay 5s 1s forwards, shadow-animation 5s infinite;
+    opacity: 0;
+}
+
+.conn3 {
+    position: absolute;
+    width: 10px;
+    height: 24px;
+    top: calc(50vh - 12px);
+    left: calc(50vw - 5px);
+    transform: rotate(-43deg);
+    background: #fff;
+    opacity: 0;
+    animation: in-delay 3s 1s forwards;
 }
