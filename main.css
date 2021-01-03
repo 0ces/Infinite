@@ -9,7 +9,7 @@
 
 :root {
     --diff: 0px;
-    --margin-start: 55px;
+    --margin-start: 25px;
     --spread: 6px;
     --shadow: 1px;
 }
@@ -32,14 +32,22 @@
 }
 
 @keyframes left-animation {
-    from {
+    0% {
         /* transform: rotate(-135deg); */
         margin-left: var(--margin-start);
-        border-color: #000;
+        border-color: transparent;
+        transform: rotate(110deg);
+        background: #000;
     }
     25% {
         margin-left: var(--margin-start);
         border-color: #000;
+        transform: rotate(110deg);
+        background: #000;
+    }
+    50% {
+        background: transparent;
+        transform: rotate(45deg);
     }
     to {
         /* transform: rotate(45deg); */
@@ -49,17 +57,25 @@
 }
 
 @keyframes right-animation {
-    from {
+    0% {
         /* transform: rotate(45deg); */
         margin-right: var(--margin-start);
-        border-color: #000;
+        border-color: transparent;
+        transform: rotate(-200deg);
+        background: #000;
     }
     25% {
         margin-right: var(--margin-start);
         border-color: #000;
+        transform: rotate(-200deg);
+        background: #000;
+    }
+    50% {
+        background: transparent;
+        transform: rotate(-135deg);
     }
     to {
-        /* transform: rotate(-135deg); */
+        transform: rotate(-135deg);
         margin-right: 0px;
         border-color: #fff;
     }
@@ -131,7 +147,7 @@ body{
     border-image-slice: 1; */
     border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
     transform: rotate(45deg);
-    animation: left-animation 5s cubic-bezier(.19,1,.22,1);
+    animation: left-animation 10s cubic-bezier(.19,1,.22,1);
 
 }
 .infinite::before {
@@ -141,7 +157,7 @@ body{
     left: auto;
     right: 0;
     transform: rotate(-135deg);
-    animation: right-animation 5s cubic-bezier(.19,1,.22,1);
+    animation: right-animation 10s cubic-bezier(.19,1,.22,1);
 }
 .second:before,
 .second:after {
@@ -151,7 +167,7 @@ body{
 
 .second {
     position: absolute;
-    animation: in-delay 5s;
+    animation: in-delay 10s;
 }
 
 span {
@@ -159,7 +175,7 @@ span {
     width: 100%;
     font-family: 'Staatliches', cursive;
     text-align: center;
-    animation: in-delay 5s;
+    animation: in-delay 10s;
 }
 
 .date {
@@ -168,11 +184,11 @@ span {
 }
 
 .date:not(.date2) {
-    animation: in-delay 5s, date-animation 6s infinite 5s;
+    animation: in-delay 10s, date-animation 6s infinite 10s;
 }
 
 .date2 {
-    animation: in-delay 8s, date-animation 6s infinite 8s;
+    animation: in-delay 13s, date-animation 6s infinite 13s;
     opacity: 0;
     transition: all 1s;
 }
@@ -190,7 +206,7 @@ span {
     top: calc(50vh - 7px);
     left: calc(50vw - 5px);
     transform: rotate(-43deg);
-    animation: in-delay 5s 1s forwards, shadow-animation 5s infinite;
+    animation: in-delay 10s 1s forwards, shadow-animation 5s infinite;
     opacity: 0;
 }
 
@@ -203,5 +219,5 @@ span {
     transform: rotate(-43deg);
     background: #fff;
     opacity: 0;
-    animation: in-delay 3s 1s forwards;
+    animation: in-delay 8s 1s forwards;
 }
