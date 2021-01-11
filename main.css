@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Staatliches);
+@import url(https://fonts.googleapis.com/css2?family=Allan);
 
 * {
     margin: 0;
@@ -220,4 +221,13 @@ span {
     background: #fff;
     opacity: 0;
     animation: in-delay 8s 1s forwards;
+}
+
+.signature {
+    font-family: 'Allan', cursive;
+    position: absolute;
+    text-align: right;
+    text-shadow: 1px 1px rgba(0,0,0,0.2);
+    padding: 10px;
+    bottom: 0;
 }
